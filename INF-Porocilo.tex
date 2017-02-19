@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english, slovene]{babel}
 \usepackage{lipsum}
+\usepackage[margin=3cm]{geometry}
 
 \author{Lenart Bučar}
 \title{\TeX{}}
@@ -91,8 +92,32 @@ Ker je program odprtokoden, je ne samo mogoče, temveč tudi zaželjeno, da ga o
 \section{Matematično okolje}
 Tako kot v \TeX{}u je tudi v \LaTeX{}u zelo razvit matematični način vnašanja, ki ga med drugim uporablja tudi Wikipedia. Inicializira se ga ali z znakom \${} (\TeX{}, deluje tudi v \LaTeX{}u) ali pa z \textbackslash{}( (Samo \LaTeX{}). V prvem primeru se ga na enak način tudi konča, v drugem pa se ga konča z \textbackslash{}). Matematične formule lahko zapišemo v vrstici (inline, inicializira se z \${} ali \textbackslash{}( ) ali pa izven vrstice (inicializira se z \${}\${} ali \textbackslash{}[ ). Primer zapisa znotraj vrstice v tem načinu je \(- b \pm \sqrt{b^2 - 4ac} \over 2a\), primer izven nje pa: \[- b \pm \sqrt{b^2 - 4ac} \over 2a\] V matematicnem nacinu lahko tudi z lahkoto zapisemo grske crke kot so $\pi{}$ ($\Pi{}$), $\phi{}$ ($\Phi{}$)\ldots
 
-\section{Naštevanje}
+\section{okolja}
 
+\subsection{Naštevanje}
+Včasih želimo narediti seznam, in za to nam \LaTeX{} ponuja tri okolja. Vsako se seveda obnaša malce drugače. Prvo je "itemize", pri katerem so stvari naštete z določenim simbolom pred njimi (privzeto je to pika), izgleda pa takole:
+
+\begin{itemize}
+\item Lorem
+\item Ipsum
+\item Dolor
+\end{itemize}
+
+Naslednje je "enumerate", ki zaporedno oštevilči predmete:
+
+\begin{enumerate}
+\item Sit
+\item Amet
+\item Consectetur
+\end{enumerate}
+
+Zadnje okolje pa je "description", pri katerem imamo ime predmeta ter njegov opis:
+
+\begin{description}
+\item[Adipiscing:] Elit
+\item[Integer:] Tempor
+\item[Est:] Ut Ux
+\end{description}
 
 \section{Paketi}
 Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi ne ponuja. Sedaj ima na voljo dve možnosti. Lahko sam s pomočjo že obstoječih ukazov napiše novega, lahko pa pogleda ali je to že kdo naredil. Ker se ponavadi izkaže da je, lahko to kodo doda v svoj program z uporabo ukaza \textbackslash{}usepackage. Glede na razširjenost programa, niti ni presenetljivo, da obstajajo paketi za skoraj vse. Od takih, ki omogocajo lažje pisanje znanstvenih enot, pa do takega, pri katerem s pomočjo enega samega ukaza dodamo "Lorem Ipsum" besedilo za zapolnjevanje prostora.
