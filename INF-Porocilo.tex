@@ -57,8 +57,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Uvod}
-\TeX{} je odprtokodno programsko okolje, ki je namenjeno pisanju besedila z matematičnimi enačbami, 
-pozneje pa se je razvil v orodje za pisanje besedila, še posebaj v obliki ostalih paketov, med katerimi je najbolj znan \LaTeX{}.
+\TeX{} je odprtokodno programsko okolje, ki je namenjeno pisanju besedila z matematičnimi enačbami, in omogoča pisanje z t.\,i. makri, ki so "zapakirani" v obliki paketov, med katerimi je najznamenitejši \LaTeX{}.
 
 Glavni razvijalec \TeX{}a je ameriški računalničar ter programer, Donald Knuth, prvo različico programa pa je izdal leta 1978. Knuth se je odločil za razvijanje \TeX{}a zaradi pisanja svoje knjige \textit{The Art of Computer Programming}. 
 Program je bil na začetku napisan v programskem jeziku SAIL. Kasneje je Knuth prišel na zamisel, da bi pisal tako program kot dokumentacijo naenkrat. Jezik ki ga je uporabil se imenuje WEB, končni program pa je v Pascalu.
@@ -66,18 +65,19 @@ Program je bil na začetku napisan v programskem jeziku SAIL. Kasneje je Knuth p
 Ena izmed zelo značilnih stvari pri \TeX{}u je označevanje verzij. Od verzije 3 dobi vsaka posodobitev na koncu dodatno decimalno števko, tako da se vse bolj približuje številu $\pi$. Trenutno smo pri verziji 3.14159265, ki je izšla leta 2014.
 
 \chapter{\TeX{}}
-\TeX{} temelji na podlagi ukazov, ki se začnejo z znakom \textbackslash{}. Tej ukazi (macro-ji) se razširijo v besedilo ali pa v druge ukaze. Poleg tega pa lahko uporabljamo še zanke ter če-potem-drugače (if-then-else) kontrolne strukture. Ukazi imajo lahko tudi določeno število neobveznih argumentov, ki se jih po klicu ukaza našteje znotraj oglatih oklepajev ([ in ]), obvezne argumente pa se našteje znotraj zavitih oklepajev (\{ in \}).
+\TeX{} temelji na podlagi ukazov, ki se začnejo z znakom \textbackslash{}. Ti ukazi (macro-ji) se razširijo v besedilo ali pa v druge ukaze. Poleg tega pa lahko uporabljamo še zanke ter če-potem-drugače (if-then-else) kontrolne strukture. Ukazi imajo lahko tudi določeno število neobveznih argumentov, ki se jih po klicu ukaza našteje znotraj oglatih oklepajev ([ in ]), obvezne argumente pa se našteje znotraj zavitih oklepajev (\{ in \}).
 S temi ukazi potem spreminjamo velikost besedila, obliko, font\ldots 
 
-Ker je \TeX{} napisan tako dobro, teče skoraj na vseh operacijskih sistemih. Poleg tega, pa Knuth ponuja denarno nagrado vsakemu, ki bi najdel hrošča (bug) v njem. Ta nagrada je na začetku znašale le 2.56 ameriških dolarjev, nato pa se je vsako leto podvojila, dokler se ni ustavila na trenutni vrednosti, ki znaša 372,6 dolarjev. Seveda pa nihče, ki je prejel to nagrado, ni čeka nikoli unovčil temveč ga je raje uokviril. 
+Ker je \TeX{} napisan tako dobro, teče skoraj na vseh operacijskih sistemih. Poleg tega pa Knuth ponuja denarno nagrado vsakemu, ki bi najdel hrošča (bug) v njem. Ta nagrada je na začetku znašale le 2.56 ameriških dolarjev, nato pa se je vsako leto podvojila, dokler se ni ustavila na trenutni vrednosti, ki znaša 372,6 dolarjev. Seveda pa nihče, ki je prejel to nagrado, ni čeka nikoli unovčil temveč ga je raje uokviril. 
 
 \chapter{Izpeljave \TeX{}a}
-Na \TeX{}u temelji kar nekaj drugih urejevalnikov besedil, med katerimi so najznamenitejši:
+Na \TeX{}u temelji kar nekaj drugih paketov makrov, med katerimi so najznamenitejši:
 \begin{itemize}
 \item \LaTeX{} (Lamport \TeX{}),
 \item Con\TeX{}T,
 \item AMS-\TeX{},
-\item jade\TeX{},
+\item Jade\TeX{},
+\item Pic\TeX{},
 \item \TeX{}info in drugi.
 \end{itemize}
 
@@ -86,10 +86,13 @@ Obstaja tudi kar nekaj razširitev, kot so Bib\TeX{} za bibliografske podatke (k
 Ker je program odprtokoden, je ne samo mogoče, temveč tudi zaželjeno, da ga ostali uporabniki predelajo ali celo izboljšajo, edini pogoj je, da se ga ne sme distribuirati pod imenom \TeX{}.
 
 \chapter{\LaTeX{}}
-\LaTeX{} je ena izmed najznamenitejših distribucij \TeX{}a, namenjena je pa pisanju knjig, znanstvenih člankov\ldots 
+\LaTeX{} je ena izmed najznamenitejših distribucij makrov \TeX{}a, namenjena je pa pisanju knjig, znanstvenih člankov\ldots 
 
-\section{Matematicno okolje}
-Tako kot v \TeX{}u je tudi v \LaTeX{}u zelo razvit matematični način vnašanja, ki ga med drugim uporablja tudi Wikipedia. Inicializira se ga ali z znakom \${} ali pa z \textbackslash{}(. V prvem primeru se ga na enak način tudi konča, v drugem pa se ga konča z \textbackslash{}). primer zapisa v tem načinu je \(- b \pm \sqrt{b^2 - 4ac} \over 2a\). V matematicnem nacinu lahko tudi z lahkoto zapisemo grske crke kot so $\pi{}$ ($\Pi{}$), $\phi{}$ ($\Phi{}$)\ldots
+\section{Matematično okolje}
+Tako kot v \TeX{}u je tudi v \LaTeX{}u zelo razvit matematični način vnašanja, ki ga med drugim uporablja tudi Wikipedia. Inicializira se ga ali z znakom \${} (\TeX{}, deluje tudi v \LaTeX{}u) ali pa z \textbackslash{}( (Samo \LaTeX{}). V prvem primeru se ga na enak način tudi konča, v drugem pa se ga konča z \textbackslash{}). Matematične formule lahko zapišemo v vrstici (inline, inicializira se z \${} ali \textbackslash{}( ) ali pa izven vrstice (inicializira se z \${}\${} ali \textbackslash{}[ ). Primer zapisa znotraj vrstice v tem načinu je \(- b \pm \sqrt{b^2 - 4ac} \over 2a\), primer izven nje pa: \[- b \pm \sqrt{b^2 - 4ac} \over 2a\] V matematicnem nacinu lahko tudi z lahkoto zapisemo grske crke kot so $\pi{}$ ($\Pi{}$), $\phi{}$ ($\Phi{}$)\ldots
+
+\section{Naštevanje}
+
 
 \section{Paketi}
 Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi ne ponuja. Sedaj ima na voljo dve možnosti. Lahko sam s pomočjo že obstoječih ukazov napiše novega, lahko pa pogleda ali je to že kdo naredil. Ker se ponavadi izkaže da je, lahko to kodo doda v svoj program z uporabo ukaza \textbackslash{}usepackage. Glede na razširjenost programa, niti ni presenetljivo, da obstajajo paketi za skoraj vse. Od takih, ki omogocajo lažje pisanje znanstvenih enot, pa do takega, pri katerem s pomočjo enega samega ukaza dodamo "Lorem Ipsum" besedilo za zapolnjevanje prostora.
