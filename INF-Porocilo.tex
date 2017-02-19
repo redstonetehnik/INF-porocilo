@@ -94,9 +94,10 @@ Tako kot v \TeX{}u je tudi v \LaTeX{}u zelo razvit matematični način vnašanja
 
 \section{okolja}
 
-\subsection{Naštevanje}
-Včasih želimo narediti seznam, in za to nam \LaTeX{} ponuja tri okolja. Vsako se seveda obnaša malce drugače. Prvo je "itemize", pri katerem so stvari naštete z določenim simbolom pred njimi (privzeto je to pika), izgleda pa takole:
+Tako \TeX{} kot \LaTeX{} nam ponujata več različnih okolij, ki spremenijo marsikatero pravilo pisanja in s tem tudi končni izgled. Enega izmed njih smo že spoznali, to je matematično okolje, ki pa se mi zdi tako pomembno, da sem ga obravnaval posebej. Vsa okolja se začne z ukazom \textbackslash{}begin\{{\em ime okolja}\}, konča pa z \textbackslash{}end\{{\em ime okolja}\}.
 
+\subsection{Naštevanje}
+Včasih želimo narediti seznam, in za to imamo na voljo tri okolja. Vsako se seveda obnaša malce drugače. Prvo je "itemize", pri katerem so stvari naštete z določenim simbolom pred njimi (privzeto je to pika), izgleda pa takole:
 \begin{itemize}
 \item Lorem
 \item Ipsum
@@ -104,7 +105,6 @@ Včasih želimo narediti seznam, in za to nam \LaTeX{} ponuja tri okolja. Vsako 
 \end{itemize}
 
 Naslednje je "enumerate", ki zaporedno oštevilči predmete:
-
 \begin{enumerate}
 \item Sit
 \item Amet
@@ -112,12 +112,15 @@ Naslednje je "enumerate", ki zaporedno oštevilči predmete:
 \end{enumerate}
 
 Zadnje okolje pa je "description", pri katerem imamo ime predmeta ter njegov opis:
-
 \begin{description}
 \item[Adipiscing:] Elit
 \item[Integer:] Tempor
 \item[Est:] Ut Ux
 \end{description}
+
+\subsection{Razpredelnice}
+
+Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati kakšno razpredelnico. \LaTeX{} nam to omogoča z uporabo okolja "tabular"
 
 \section{Paketi}
 Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi ne ponuja. Sedaj ima na voljo dve možnosti. Lahko sam s pomočjo že obstoječih ukazov napiše novega, lahko pa pogleda ali je to že kdo naredil. Ker se ponavadi izkaže da je, lahko to kodo doda v svoj program z uporabo ukaza \textbackslash{}usepackage. Glede na razširjenost programa, niti ni presenetljivo, da obstajajo paketi za skoraj vse. Od takih, ki omogocajo lažje pisanje znanstvenih enot, pa do takega, pri katerem s pomočjo enega samega ukaza dodamo "Lorem Ipsum" besedilo za zapolnjevanje prostora.
