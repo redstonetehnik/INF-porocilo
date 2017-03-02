@@ -4,6 +4,7 @@
 \usepackage[english, slovene]{babel}
 \usepackage{lipsum}
 \usepackage[margin=3cm]{geometry}
+\usepackage{alltt}
 
 \author{Lenart Bučar}
 \title{\TeX{}}
@@ -55,6 +56,8 @@
 \tableofcontents
 
 \mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Uvod}
@@ -65,11 +68,17 @@ Program je bil na začetku napisan v programskem jeziku SAIL. Kasneje je Knuth p
 
 Ena izmed zelo značilnih stvari pri \TeX{}u je označevanje verzij. Od verzije 3 dobi vsaka posodobitev na koncu dodatno decimalno števko, tako da se vse bolj približuje številu $\pi$. Trenutno smo pri verziji 3.14159265, ki je izšla leta 2014.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{\TeX{}}
 \TeX{} temelji na podlagi ukazov, ki se začnejo z znakom \textbackslash{}. Ti ukazi (macro-ji) se razširijo v besedilo ali pa v druge ukaze. Poleg tega pa lahko uporabljamo še zanke ter če-potem-drugače (if-then-else) kontrolne strukture. Ukazi imajo lahko tudi določeno število neobveznih argumentov, ki se jih po klicu ukaza našteje znotraj oglatih oklepajev ([ in ]), obvezne argumente pa se našteje znotraj zavitih oklepajev (\{ in \}).
 S temi ukazi potem spreminjamo velikost besedila, obliko, font\ldots 
 
 Ker je \TeX{} napisan tako dobro, teče skoraj na vseh operacijskih sistemih. Poleg tega pa Knuth ponuja denarno nagrado vsakemu, ki bi najdel hrošča (bug) v njem. Ta nagrada je na začetku znašale le 2.56 ameriških dolarjev, nato pa se je vsako leto podvojila, dokler se ni ustavila na trenutni vrednosti, ki znaša 372,6 dolarjev. Seveda pa nihče, ki je prejel to nagrado, ni čeka nikoli unovčil temveč ga je raje uokviril. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Izpeljave \TeX{}a}
 Na \TeX{}u temelji kar nekaj drugih paketov makrov, med katerimi so najznamenitejši:
@@ -86,13 +95,20 @@ Obstaja tudi kar nekaj razširitev, kot so Bib\TeX{} za bibliografske podatke (k
 \TeX{} in vse njegove razširitve so zastonj na voljo v CTANu. CTAN ali \textit{Comprehensive \TeX{} Archive Network} (Popoln arhiv \TeX{}a) je omrezje, kamor uporabniki nalagajo svoje razsiritve za \TeX{}. Trenutno ima okoli 5500 paketov, ki jih je nalozilo priblizno 2500 uporabnikov.
 Ker je program odprtokoden, je ne samo mogoče, temveč tudi zaželjeno, da ga ostali uporabniki predelajo ali celo izboljšajo, edini pogoj je, da se ga ne sme distribuirati pod imenom \TeX{}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{\LaTeX{}}
 \LaTeX{} je ena izmed najznamenitejših distribucij makrov \TeX{}a, namenjena je pa pisanju knjig, znanstvenih člankov\ldots 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Matematično okolje}
 Tako kot v \TeX{}u je tudi v \LaTeX{}u zelo razvit matematični način vnašanja, ki ga med drugim uporablja tudi Wikipedia. Inicializira se ga ali z znakom \${} (\TeX{}, deluje tudi v \LaTeX{}u) ali pa z \textbackslash{}( (Samo \LaTeX{}). V prvem primeru se ga na enak način tudi konča, v drugem pa se ga konča z \textbackslash{}). Matematične formule lahko zapišemo v vrstici (inline, inicializira se z \${} ali \textbackslash{}( ) ali pa izven vrstice (inicializira se z \${}\${} ali \textbackslash{}[ ). Primer zapisa znotraj vrstice v tem načinu je \(- b \pm \sqrt{b^2 - 4ac} \over 2a\), primer izven nje pa: \[- b \pm \sqrt{b^2 - 4ac} \over 2a\] V matematicnem nacinu lahko tudi z lahkoto zapisemo grske crke kot so $\pi{}$ ($\Pi{}$), $\phi{}$ ($\Phi{}$)\ldots
 
-\section{okolja}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Okolja}
 
 Tako \TeX{} kot \LaTeX{} nam ponujata več različnih okolij, ki spremenijo marsikatero pravilo pisanja in s tem tudi končni izgled. Enega izmed njih smo že spoznali, to je matematično okolje, ki pa se mi zdi tako pomembno, da sem ga obravnaval posebej. Vsa okolja se začne z ukazom \textbackslash{}begin\{{\em ime okolja}\}, konča pa z \textbackslash{}end\{{\em ime okolja}\}.
 
@@ -122,12 +138,41 @@ Zadnje okolje pa je "description", pri katerem imamo ime predmeta ter njegov opi
 
 Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati kakšno razpredelnico. \LaTeX{} nam to omogoča z uporabo okolja "tabular"
 
+\subsection{Verbatim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Paketi}
 Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi ne ponuja. Sedaj ima na voljo dve možnosti. Lahko sam s pomočjo že obstoječih ukazov napiše novega, lahko pa pogleda ali je to že kdo naredil. Ker se ponavadi izkaže da je, lahko to kodo doda v svoj program z uporabo ukaza \textbackslash{}usepackage. Glede na razširjenost programa, niti ni presenetljivo, da obstajajo paketi za skoraj vse. Od takih, ki omogocajo lažje pisanje znanstvenih enot, pa do takega, pri katerem s pomočjo enega samega ukaza dodamo "Lorem Ipsum" besedilo za zapolnjevanje prostora.
 
 \subsection{Beamer}
 \LaTeX{} ponuja tudi možnost izdelave predstavitve, z uporabo paketa beamer. Pri tem paketu, uporabnik definira kako naj izgleda posamezna prosojnica, kateri elementi naj se kdaj prikazejo...
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Navajanje virov}
+
+\LaTeX{} nam z pomočjo dodatka Bib\TeX{} omogoča preprosto navajanje virov. Potrebujebo le dodatno \textit{.bib} datoteko, ki jo na želenem mestu kličemo z \textbackslash{}bibliography\{\textit{ime datoteke}\}. Datoteka mora biti seveda pravilno oblikovana, da jo \LaTeX lahko prebere.
+Vsako delo, mora imeti svoj ``odstavek'', ki pa izgleda takole:
+
+\begin{alltt}
+
+@\textit{tip dela} \{ \textit{interna oznaka, ki jo bomo uporabljali za citiranje},
+  author = \{\},
+  title = "",
+  journal = "",
+  volume = "",
+  number = "",
+  pages = "",
+  year = "",
+  DOI = ""
+  publisher = "",
+  year = "",
+  url = "",
+  note = "",
+\}
+
+\end{alltt}
 
 
 
