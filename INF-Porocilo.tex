@@ -184,7 +184,11 @@ L
         u
          m.
 
-Lahko pa se nam zgodi, da želimo besedilo oblikovati točno na določen način. Če želimo, da \LaTeX{} upošteva prelome vrstic, lahko uporabimo ukaz \textbackslash{}obeylines.
+Lahko pa se nam zgodi, da želimo besedilo oblikovati točno na določen način. 
+
+\subsection{Upoštevanje prelomov vrstic}
+
+Če želimo, da \LaTeX{} upošteva prelome vrstic, lahko uporabimo ukaz \textbackslash{}obeylines.
 Če torej recimo napišemo:
 \\
 {\obeylines\parindent=0pt
@@ -192,7 +196,7 @@ Lahko pa se nam zgodi, da želimo besedilo oblikovati točno na določen način.
 Lorem Ipsum
 Dolor Sit
 Amet
-\}
+\}\\
 }
 \noindent{} Se nam izpiše:
 \\
@@ -200,8 +204,14 @@ Amet
 Lorem Ipsum
 Dolor Sit
 Amet
-}
+} Če pa tega ukaza ne bi uporabili, bi z istim vhodom dobili:
+Lorem Ipsum
+Dolor Sit
+Amet.
 
+\subsection{Oblikovanje besedila v oblike}
+
+%\parshape!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
