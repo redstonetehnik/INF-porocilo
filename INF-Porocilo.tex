@@ -5,11 +5,19 @@
 \usepackage{lipsum}
 \usepackage[margin=3cm]{geometry}
 \usepackage{alltt}
+\usepackage{tikz}
 
 \author{Lenart Bučar}
 \title{\TeX{}}
 \date{\today}
 
+\newcommand\rottext[4][center]{
+    \tikz[baseline=(X.base),every node/.style={inner sep=0pt}]{
+        \node (X) {#2};
+        \foreach \i in {1,...,#3}
+        \node[rotate around={#4*\i:(X.#1)}] {#2};
+    }
+}	%command to rotate text. One optional argument, around what point it should pivot (def is center). 3 mandatory arguments: First one is What text to rotate, second is How many times to copy it and third one is for what angle. The rotation is done counter-clockwise.
 
 \newcommand\abstractname{Abstract}
 \makeatletter
@@ -138,8 +146,6 @@ Zadnje okolje pa je "description", pri katerem imamo ime predmeta ter njegov opi
 
 Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati kakšno razpredelnico. \LaTeX{} nam to omogoča z uporabo okolja "tabular"
 
-\subsection{Verbatim}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Paketi}
@@ -147,6 +153,55 @@ Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi 
 
 \subsection{Beamer}
 \LaTeX{} ponuja tudi možnost izdelave predstavitve, z uporabo paketa beamer. Pri tem paketu, uporabnik definira kako naj izgleda posamezna prosojnica, kateri elementi naj se kdaj prikazejo...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Oblikovanje besedila}
+
+
+\LaTeX{} pri generiranju končnega besedila odstrani vse večkratne presledke, prehode v novo vrstico itd. Zato sta si besedili: ``Lorem{ }{ }{ }{ }{ }{ }{ }{ }{ }{ }{ }{ }{ }{ }{ }{ }Ipsum'' in ``Lorem Ipsum'' enaki. Po končanem generiranju namreč pri prvem dobimo Lorem               Ipsum, pri drugem pa Lorem Ipsum. Če na primer vpišemo
+\begin{verbatim}
+L
+ o
+  r
+   e
+    m
+     I
+      p
+       s
+        u
+         m
+\end{verbatim}
+se nam izpiše 
+L
+ o
+  r
+   e
+    m
+     I
+      p
+       s
+        u
+         m.
+
+Lahko pa se nam zgodi, da želimo besedilo oblikovati točno na določen način. Če želimo, da \LaTeX{} upošteva prelome vrstic, lahko uporabimo ukaz \textbackslash{}obeylines.
+Če torej recimo napišemo:
+\\
+{\obeylines\parindent=0pt
+\{\textbackslash{}obeylines
+Lorem Ipsum
+Dolor Sit
+Amet
+\}
+}
+\noindent{} Se nam izpiše:
+\\
+{\obeylines\parindent=0pt
+Lorem Ipsum
+Dolor Sit
+Amet
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -175,7 +230,6 @@ Vsako delo, mora imeti svoj ``odstavek'', ki pa izgleda takole:
 \end{alltt}
 
 
-%this is just a comment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
