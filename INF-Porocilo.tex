@@ -1,8 +1,8 @@
-\documentclass[10p, a4paper, twopage]{book}
+\documentclass[a4paper]{book}
 
 \usepackage[utf8]{inputenc}
 \usepackage[english, slovene]{babel}
-\usepackage{lipsum}
+\usepackage[nopar]{lipsum}
 \usepackage[margin=3cm]{geometry}
 \usepackage{alltt}
 \usepackage{tikz}
@@ -18,6 +18,8 @@
         \node[rotate around={#4*\i:(X.#1)}] {#2};
     }
 }	%command to rotate text. One optional argument, around what point it should pivot (def is center). 3 mandatory arguments: First one is What text to rotate, second is How many times to copy it and third one is for what angle. The rotation is done counter-clockwise.
+
+\newcommand\tbs{\textbackslash{}}
 
 \newcommand\abstractname{Abstract}
 \makeatletter
@@ -80,7 +82,7 @@ Ena izmed zelo značilnih stvari pri \TeX{}u je označevanje verzij. Od verzije 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{\TeX{}}
-\TeX{} temelji na podlagi ukazov, ki se začnejo z znakom \textbackslash{}. Ti ukazi (macro-ji) se razširijo v besedilo ali pa v druge ukaze. Poleg tega pa lahko uporabljamo še zanke ter če-potem-drugače (if-then-else) kontrolne strukture. Ukazi imajo lahko tudi določeno število neobveznih argumentov, ki se jih po klicu ukaza našteje znotraj oglatih oklepajev ([ in ]), obvezne argumente pa se našteje znotraj zavitih oklepajev (\{ in \}).
+\TeX{} temelji na podlagi ukazov, ki se začnejo z znakom \tbs{}. Ti ukazi (macro-ji) se razširijo v besedilo ali pa v druge ukaze. Poleg tega pa lahko uporabljamo še zanke ter če-potem-drugače (if-then-else) kontrolne strukture. Ukazi imajo lahko tudi določeno število neobveznih argumentov, ki se jih po klicu ukaza našteje znotraj oglatih oklepajev ([ in ]), obvezne argumente pa se našteje znotraj zavitih oklepajev (\{ in \}).
 S temi ukazi potem spreminjamo velikost besedila, obliko, font\ldots
 
 Ker je \TeX{} napisan tako dobro, teče skoraj na vseh operacijskih sistemih. Poleg tega pa Knuth ponuja denarno nagrado vsakemu, ki bi najdel hrošča (bug) v njem. Ta nagrada je na začetku znašale le 2.56 ameriških dolarjev, nato pa se je vsako leto podvojila, dokler se ni ustavila na trenutni vrednosti, ki znaša 372,6 dolarjev. Seveda pa nihče, ki je prejel to nagrado, ni čeka nikoli unovčil temveč ga je raje uokviril.
@@ -112,13 +114,13 @@ Ker je program odprtokoden, je ne samo mogoče, temveč tudi zaželjeno, da ga o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Matematično okolje}
-Tako kot v \TeX{}u je tudi v \LaTeX{}u zelo razvit matematični način vnašanja, ki ga med drugim uporablja tudi Wikipedia. Inicializira se ga ali z znakom \${} (\TeX{}, deluje tudi v \LaTeX{}u) ali pa z \textbackslash{}( (Samo \LaTeX{}). V prvem primeru se ga na enak način tudi konča, v drugem pa se ga konča z \textbackslash{}). Matematične formule lahko zapišemo v vrstici (inline, inicializira se z \${} ali \textbackslash{}( ) ali pa izven vrstice (inicializira se z \${}\${} ali \textbackslash{}[ ). Primer zapisa znotraj vrstice v tem načinu je \(- b \pm \sqrt{b^2 - 4ac} \over 2a\), primer izven nje pa: \[- b \pm \sqrt{b^2 - 4ac} \over 2a\] V matematicnem nacinu lahko tudi z lahkoto zapisemo grske crke kot so $\pi{}$ ($\Pi{}$), $\phi{}$ ($\Phi{}$)\ldots
+Tako kot v \TeX{}u je tudi v \LaTeX{}u zelo razvit matematični način vnašanja, ki ga med drugim uporablja tudi Wikipedia. Inicializira se ga ali z znakom \${} (\TeX{}, deluje tudi v \LaTeX{}u) ali pa z \tbs{}( (Samo \LaTeX{}). V prvem primeru se ga na enak način tudi konča, v drugem pa se ga konča z \tbs{}). Matematične formule lahko zapišemo v vrstici (inline, inicializira se z \${} ali \tbs{}( ) ali pa izven vrstice (inicializira se z \${}\${} ali \tbs{}[ ). Primer zapisa znotraj vrstice v tem načinu je \(- b \pm \sqrt{b^2 - 4ac} \over 2a\), primer izven nje pa: \[- b \pm \sqrt{b^2 - 4ac} \over 2a\] V matematicnem nacinu lahko tudi z lahkoto zapisemo grske crke kot so $\pi{}$ ($\Pi{}$), $\phi{}$ ($\Phi{}$)\ldots
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Okolja}
 
-Tako \TeX{} kot \LaTeX{} nam ponujata več različnih okolij, ki spremenijo marsikatero pravilo pisanja in s tem tudi končni izgled. Enega izmed njih smo že spoznali, to je matematično okolje, ki pa se mi zdi tako pomembno, da sem ga obravnaval posebej. Vsa okolja se začne z ukazom \textbackslash{}begin\{{\em ime okolja}\}, konča pa z \textbackslash{}end\{{\em ime okolja}\}.
+Tako \TeX{} kot \LaTeX{} nam ponujata več različnih okolij, ki spremenijo marsikatero pravilo pisanja in s tem tudi končni izgled. Enega izmed njih smo že spoznali, to je matematično okolje, ki pa se mi zdi tako pomembno, da sem ga obravnaval posebej. Vsa okolja se začne z ukazom \tbs{}begin\{{\em ime okolja}\}, konča pa z \tbs{}end\{{\em ime okolja}\}.
 
 \subsection{Naštevanje}
 Včasih želimo narediti seznam, in za to imamo na voljo tri okolja. Vsako se seveda obnaša malce drugače. Prvo je "itemize", pri katerem so stvari naštete z določenim simbolom pred njimi (privzeto je to pika), izgleda pa takole:
@@ -149,7 +151,7 @@ Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati k
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Paketi}
-Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi ne ponuja. Sedaj ima na voljo dve možnosti. Lahko sam s pomočjo že obstoječih ukazov napiše novega, lahko pa pogleda ali je to že kdo naredil. Ker se ponavadi izkaže da je, lahko to kodo doda v svoj program z uporabo ukaza \textbackslash{}usepackage. Glede na razširjenost programa, niti ni presenetljivo, da obstajajo paketi za skoraj vse. Od takih, ki omogocajo lažje pisanje znanstvenih enot, pa do takega, pri katerem s pomočjo enega samega ukaza dodamo "Lorem Ipsum" besedilo za zapolnjevanje prostora.
+Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi ne ponuja. Sedaj ima na voljo dve možnosti. Lahko sam s pomočjo že obstoječih ukazov napiše novega, lahko pa pogleda ali je to že kdo naredil. Ker se ponavadi izkaže da je, lahko to kodo doda v svoj program z uporabo ukaza \tbs{}usepackage. Glede na razširjenost programa, niti ni presenetljivo, da obstajajo paketi za skoraj vse. Od takih, ki omogocajo lažje pisanje znanstvenih enot, pa do takega, pri katerem s pomočjo enega samega ukaza dodamo "Lorem Ipsum" besedilo za zapolnjevanje prostora.
 
 \subsection{Beamer}
 \LaTeX{} ponuja tudi možnost izdelave predstavitve, z uporabo paketa beamer. Pri tem paketu, uporabnik definira kako naj izgleda posamezna prosojnica, kateri elementi naj se kdaj prikazejo...
@@ -188,11 +190,11 @@ Lahko pa se nam zgodi, da želimo besedilo oblikovati točno na določen način.
 
 \subsection{Upoštevanje prelomov vrstic}
 
-Če želimo, da \LaTeX{} upošteva prelome vrstic, lahko uporabimo ukaz \textbackslash{}obeylines.
+Če želimo, da \LaTeX{} upošteva prelome vrstic, lahko uporabimo ukaz \tbs{}obeylines.
 Če torej recimo napišemo:
 \\
 {\obeylines\parindent=0pt
-\{\textbackslash{}obeylines
+\{\tbs{}obeylines
 Lorem Ipsum
 Dolor Sit
 Amet
@@ -211,13 +213,46 @@ Amet.
 
 \subsection{Oblikovanje besedila v oblike}
 
-%\parshape!
+Z uporabo ukaza \tbs{}parshape lahko oblikujemo besedilo v poljubne oblike. Kličemo ga v naslednji obliki: \tbs{}parshape=n $i_1 l_1$\ldots pri čemer je n število vrstic, $i_n$ zamik posamezne vrstice, $l_n$ pa njena širina.
+Če torej vnesemo 
+\tbs{}parshape=10 \\ 
+0.25\tbs{}hsize 0.5\tbs{}hsize \\ 
+0.24\tbs{}hsize 0.52\tbs{}hsize \\ 
+0.23\tbs{}hsize 0.54\tbs{}hsize \\ 
+0.22\tbs{}hsize 0.56\tbs{}hsize \\ 
+0.21\tbs{}hsize 0.58\tbs{}hsize \\ 
+0.20\tbs{}hsize 0.6\tbs{}hsize \\ 
+0.19\tbs{}hsize 0.62\tbs{}hsize \\ 
+0.18\tbs{}hsize 0.64\tbs{}hsize \\ 
+0.17\tbs{}hsize 0.66\tbs{}hsize \\ 
+0.16\tbs{}hsize 0.68\tbs{}hsize \\ 
+\tbs{}lipsum[1] (za prvi odstavek besedila Lorem Ipsum), dobimo:\\
+
+\parshape=16 
+0.25\hsize 0.5\hsize 
+0.24\hsize 0.52\hsize 
+0.23\hsize 0.54\hsize 
+0.22\hsize 0.56\hsize 
+0.21\hsize 0.58\hsize 
+0.20\hsize 0.6\hsize 
+0.19\hsize 0.62\hsize 
+0.18\hsize 0.64\hsize 
+0.17\hsize 0.66\hsize 
+0.16\hsize 0.68\hsize
+0.15\hsize 0.70\hsize
+0.14\hsize 0.72\hsize
+0.13\hsize 0.74\hsize
+0.12\hsize 0.76\hsize
+0.11\hsize 0.78\hsize
+0.10\hsize 0.80\hsize
+\noindent\lipsum[1]
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Navajanje virov}
 
-\LaTeX{} nam z pomočjo dodatka Bib\TeX{} omogoča preprosto navajanje virov. Potrebujebo le dodatno \textit{.bib} datoteko, ki jo na želenem mestu kličemo z \textbackslash{}bibliography\{\textit{ime datoteke}\}. Datoteka mora biti seveda pravilno oblikovana, da jo \LaTeX lahko prebere.
+\LaTeX{} nam z pomočjo dodatka Bib\TeX{} omogoča preprosto navajanje virov. Potrebujebo le dodatno \textit{.bib} datoteko, ki jo na želenem mestu kličemo z \tbs{}bibliography\{\textit{ime datoteke}\}. Datoteka mora biti seveda pravilno oblikovana, da jo \LaTeX lahko prebere.
 Vsako delo, mora imeti svoj ``odstavek'', ki pa izgleda takole:
 
 \begin{alltt}
