@@ -146,7 +146,7 @@ Zadnje okolje pa je "description", pri katerem imamo ime predmeta ter njegov opi
 
 \subsection{Razpredelnice}
 
-Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati kakšno razpredelnico. \LaTeX{} nam to omogoča z uporabo okolja "tabular"
+Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati kakšno razpredelnico. \LaTeX{} nam to omogoča z uporabo okolja "tabular". 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -155,6 +155,19 @@ Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi 
 
 \subsection{Beamer}
 \LaTeX{} ponuja tudi možnost izdelave predstavitve, z uporabo paketa beamer. Pri tem paketu, uporabnik definira kako naj izgleda posamezna prosojnica, kateri elementi naj se kdaj prikazejo...
+
+\subsection{Lipsum}
+Verjetno vsi poznate besedilo, Lorem Ipsum, ki se uporablja za:
+\begin{itemize}
+\item zapolnjevanje prostora,
+\item predstavitev izgleda fonta in
+\item kjerkoli drugje, kjer se potregbuje neko besedilo, ki ali ni pomembno kakšno je, ali pa se ga pisec ta trenutek ne more spomniti.
+\end{itemize}
+
+Kliče se ga z ukazom \tbs{}lipsum, v oglatih oklepajih pa lahko navedemo število odstavkov. 
+Na primer če napičemo \tbs{}lipsum[1] dobimo ven nekaj približno takega:\\
+
+\lipsum[1]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -215,7 +228,7 @@ Amet.
 
 Z uporabo ukaza \tbs{}parshape lahko oblikujemo besedilo v poljubne oblike. Kličemo ga v naslednji obliki: \tbs{}parshape=n $i_1 l_1$\ldots pri čemer je n število vrstic, $i_n$ zamik posamezne vrstice, $l_n$ pa njena širina.
 Če torej vnesemo 
-\tbs{}parshape=10 \\ 
+\tbs{}parshape=16 \\ 
 0.25\tbs{}hsize 0.5\tbs{}hsize \\ 
 0.24\tbs{}hsize 0.52\tbs{}hsize \\ 
 0.23\tbs{}hsize 0.54\tbs{}hsize \\ 
@@ -253,6 +266,7 @@ Z uporabo ukaza \tbs{}parshape lahko oblikujemo besedilo v poljubne oblike. Kli�
 0.10\hsize 0.80\hsize
 \noindent\lipsum[1]
 
+Seveda pa lahko na ta način oblikujemo kakršne koli oblike želimo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
