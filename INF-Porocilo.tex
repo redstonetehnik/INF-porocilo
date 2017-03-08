@@ -325,14 +325,18 @@ Vsako delo, mora imeti svoj ``odstavek'', ki pa izgleda takole:
 
 \begin{alltt}
 
-@\textit{tip dela} \{ \textit{interna oznaka, ki jo bomo uporabljali za citiranje},
+@\textit{tip dela}\{\textit{interna oznaka, ki jo bomo uporabljali za citiranje},
   author = \{\},
   title = "",
+  chapter = "",
+  edition = "",
+  editor = "",
   journal = "",
   volume = "",
   number = "",
   pages = "",
   year = "",
+  month = "",
   DOI = ""
   publisher = "",
   year = "",
@@ -341,6 +345,22 @@ Vsako delo, mora imeti svoj ``odstavek'', ki pa izgleda takole:
 \}
 
 \end{alltt}
+
+Seveda pa nam ni treba izpolniti vseh polj. Primer navajanja dela izgleda takole:
+
+\begin{alltt}
+
+@book {H2G2,
+  author = {Douglas Adams},
+  title = "Hitchhikers Guide to the Galaxy",
+  chapter = "5",
+  pages = "42",
+  year = "1996",
+}
+
+\end{alltt}
+
+Ko pa to prevedemo, dobimo:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
