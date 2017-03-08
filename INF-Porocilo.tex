@@ -147,6 +147,37 @@ Zadnje okolje pa je "description", pri katerem imamo ime predmeta ter njegov opi
 \subsection{Razpredelnice}
 
 Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati kakšno razpredelnico. \LaTeX{} nam to omogoča z uporabo okolja "tabular". 
+Pri njegovem začetku moramo navesti koliko stolpcev ter kakšna vrsta bo to. Na voljo imamo sledeče možnosti:
+\begin{itemize}
+\item c za sredisko poravnano besedilo,
+\item l za levo poravnavo besedila,
+\item r da desno poravnavo,
+\item p za obliko odstavka ter
+\item $|$ za navpično črto.
+\end{itemize}
+
+Ko pišemo podatke v razpredelnico, se med polji pomikamo z znakom \& , vrstico pa končamo z \tbs\tbs. Če želimo, lahko z uporabo ukaza \tbs{}hline še vodoravno razmejimo celice.
+Primer tabele bi izgledal takole:\\ \\
+\tbs{}begin\{tabular\}\{$|$l c$||$c$|$r$|$\} (Najprej navpična črta, levo poravnano besedilo, dve sredinsko centrirani polji razmejeni z dvojno črto ter desno poravnano polje)\\
+\tbs{}hline (Črta na začetku)\\
+Lorem \& Ipsum \& Dolor \& Sit \tbs{}\tbs{} (Tukaj ni vodoravne črte)\\
+Amet \& Consectetuer \& Adipiscing \& Elit \tbs{}\tbs{} \tbs{}hline \tbs{}hline (Tu pa imamo dve)\\
+Ut \& Purus \& Elit \& Vestibulum \tbs{}\tbs{} \tbs{}hline\\\\
+\tbs{}end\{tabular\}\\
+
+
+Rezultat pa bi bil takšen:\\
+
+\begin{tabular}{|l c||c|r|}
+\hline
+Lorem & Ipsum & Dolor & Sit \\
+Amet & Consectetuer & Adipiscing & Elit \\ \hline \hline
+Ut & Purus & Elit & Vestibulum \\ \hline
+
+\end{tabular}
+
+
+\subsection{Verbatim}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
