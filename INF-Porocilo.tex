@@ -20,6 +20,8 @@
     }
 }	%command to rotate text. One optional argument, around what point it should pivot (def is center). 3 mandatory arguments: First one is What text to rotate, second is How many times to copy it and third one is for what angle. The rotation is done counter-clockwise.
 
+\newcommand\cmsc[2]{{\huge #1} : {\huge \textsc{#2}}}		%c(o)m(pare) s(mall) c(aps)
+
 \newcommand\tbs{\textbackslash{}}
 
 \newcommand\abstractname{Abstract}
@@ -168,7 +170,7 @@ Ut \& Purus \& Elit \& Vestibulum \tbs{}\tbs{} \tbs{}hline (tu pa je še zaklju�
 \tbs{}end\{tabular\}\\
 
 
-Rezultat pa bi bil takšen:\\
+Rezultat je takšen:\\
 
 \begin{tabular}{|l c||c|r|}
 \hline
@@ -182,21 +184,21 @@ Ut & Purus & Elit & Vestibulum \\ \hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Paketi}
-Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi ne ponuja. Sedaj ima na voljo dve možnosti. Lahko sam s pomočjo že obstoječih ukazov napiše novega, lahko pa pogleda ali je to že kdo naredil. Ker se ponavadi izkaže da je, lahko to kodo doda v svoj program z uporabo ukaza \tbs{}usepackage. Glede na razširjenost programa, niti ni presenetljivo, da obstajajo paketi za skoraj vse. Od takih, ki omogocajo lažje pisanje znanstvenih enot, pa do takega, pri katerem s pomočjo enega samega ukaza dodamo "Lorem Ipsum" besedilo za zapolnjevanje prostora.
+Seveda se lahko zgodi, da si pisec zaželi nek ukaz, ki ga \LaTeX{} sam po sebi ne ponuja. Sedaj ima na voljo dve možnosti. Lahko sam s pomočjo že obstoječih ukazov napiše novega, lahko pa pogleda ali je to že kdo naredil. Ker se ponavadi izkaže, da je, lahko to kodo doda v svoj program z uporabo ukaza \tbs{}usepackage. Glede na razširjenost programa niti ni presenetljivo, da obstajajo paketi za skoraj vse. Od takih, ki omogočajo lažje pisanje znanstvenih enot, pa do takega, pri katerem s pomočjo enega samega ukaza dodamo "Lorem Ipsum" besedilo za zapolnjevanje prostora.
 
 \subsection{Beamer}
-\LaTeX{} ponuja tudi možnost izdelave predstavitve, z uporabo paketa beamer. Pri tem paketu, uporabnik definira kako naj izgleda posamezna prosojnica, kateri elementi naj se kdaj prikazejo...
+\LaTeX{} ponuja tudi možnost izdelave predstavitve z uporabo paketa beamer. Pri tem paketu uporabnik definira kako naj izgleda posamezna prosojnica, kateri elementi naj se kdaj prikažejo...
 
 \subsection{Lipsum}
-Verjetno vsi poznate besedilo, Lorem Ipsum, ki se uporablja za:
+Verjetno vsi poznate besedilo Lorem Ipsum, ki se uporablja za:
 \begin{itemize}
 \item zapolnjevanje prostora,
 \item predstavitev izgleda fonta in
-\item kjerkoli drugje, kjer se potregbuje neko besedilo, ki ali ni pomembno kakšno je, ali pa se ga pisec ta trenutek ne more spomniti.
+\item kjerkoli drugje, kjer se potrebuje neko besedilo, ki ali ni pomembno kakšno je ali pa se ga pisec ta trenutek ne more spomniti.
 \end{itemize}
 
 Kliče se ga z ukazom \tbs{}lipsum, v oglatih oklepajih pa lahko navedemo število odstavkov. 
-Na primer če napičemo \tbs{}lipsum[1] dobimo ven nekaj približno takega:\\
+Če primer napišemo \tbs{}lipsum[1] dobimo ven nekaj približno takega:\\
 
 \lipsum[1]
 
@@ -305,7 +307,7 @@ Seveda pa lahko na ta način oblikujemo kakršne koli oblike želimo.
 
 \subsection{Ligature}
 
-\LaTeX pri pisanju besedila kjer je mogoče, uporablja \textit{ligature}. To pomeni, da ima za dve črki, ki se zelo pogosto pojavljata skupaj poseben znak. Primeri tega so:\\[15pt]
+\LaTeX{} pri pisanju besedila uporablja \textit{ligature}. To pomeni, da ima za dve črki, ki se zelo pogosto pojavljata skupaj, poseben znak. Primeri tega so:\\[15pt]
 {\Huge fi}\\[15pt]
 {\Huge fl}\\[15pt]
 {\Huge ff}\\[15pt]
@@ -318,14 +320,25 @@ Seveda pa lahko na ta način oblikujemo kakršne koli oblike želimo.
 
 Če želimo neko stvar poudariti, ampak ne napisati z velikimi črkami, lahko uporabimo tako imenovane ``majhne velike črke''. Po izgledu so enake velikim, s to razliko, da so pomanjšane. 
 
-%primeri!
+Na primer:\\
+\cmsc{A}{a}\\
+\cmsc{B}{b}\\
+\cmsc{C}{c}\\
+\cmsc{D}{d}\\
+\cmsc{E}{e}\\
+\cmsc{F}{f}\\
+\cmsc{G}{g}\\
+\cmsc{H}{h}\\
+\cmsc{I}{i}\\
+
+Vse prikazane črke uporabljajo enako velikost pisave. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Navajanje virov}
 
-\LaTeX{} nam z pomočjo dodatka Bib\TeX{} omogoča preprosto navajanje virov. Potrebujebo le dodatno \textit{.bib} datoteko, ki jo na želenem mestu kličemo z \tbs{}bibliography\{\textit{ime datoteke}\}. Datoteka mora biti seveda pravilno oblikovana, da jo \LaTeX lahko prebere.
-Vsako delo, mora imeti svoj ``odstavek'', ki pa izgleda takole:
+\LaTeX{} nam s pomočjo dodatka Bib\TeX{} omogoča preprosto navajanje virov. Potrebujemo le dodatno \textit{.bib} datoteko, ki jo na želenem mestu kličemo z \tbs{}bibliography\{\textit{ime datoteke}\}. Datoteka mora biti seveda pravilno oblikovana, da jo \LaTeX lahko prebere.
+Vsako delo mora imeti svoj ``odstavek'', ki pa izgleda takole:
 
 \begin{alltt}
 
