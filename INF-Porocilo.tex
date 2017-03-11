@@ -97,7 +97,7 @@ Ker je \TeX{} napisan tako dobro, teče skoraj na vseh operacijskih sistemih. Po
 Na \TeX{}u temelji kar nekaj drugih paketov makrov, med katerimi so najznamenitejši:
 \begin{itemize}
 \item \LaTeX{} (Lamport \TeX{}),
-\item Mik\TeX{},
+\item MiK\TeX{},
 \item Con\TeX{}T,
 \item AMS-\TeX{},
 \item Jade\TeX{},
@@ -150,7 +150,7 @@ Zadnje okolje pa je "description", pri katerem imamo ime predmeta ter njegov opi
 
 \subsection{Razpredelnice}
 
-Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati kakšno razpredelnico. \LaTeX{} nam to omogoča z uporabo okolja "tabular". 
+Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati kakšno razpredelnico. \LaTeX{} nam to omogoča z uporabo okolja "tabular".
 Pri njegovem začetku moramo navesti koliko stolpcev ter kakšna vrsta bo to. Na voljo imamo sledeče možnosti:
 \begin{itemize}
 \item c za sredinsko poravnavo besedila,
@@ -197,7 +197,7 @@ Verjetno vsi poznate besedilo Lorem Ipsum, ki se uporablja za:
 \item kjerkoli drugje, kjer se potrebuje neko besedilo, ki ali ni pomembno kakšno je ali pa se ga pisec ta trenutek ne more spomniti.
 \end{itemize}
 
-Kliče se ga z ukazom \tbs{}lipsum, v oglatih oklepajih pa lahko navedemo število odstavkov. 
+Kliče se ga z ukazom \tbs{}lipsum, v oglatih oklepajih pa lahko navedemo število odstavkov.
 Če primer napišemo \tbs{}lipsum[1] dobimo ven nekaj približno takega:\\
 
 \lipsum[1]
@@ -220,7 +220,7 @@ L
         u
          m
 \end{verbatim}
-se nam izpiše 
+se nam izpiše
 L
  o
   r
@@ -232,7 +232,7 @@ L
         u
          m.
 
-Lahko pa se nam zgodi, da želimo besedilo oblikovati točno na določen način. 
+Lahko pa se nam zgodi, da želimo besedilo oblikovati točno na določen način.
 
 \subsection{Upoštevanje prelomov vrstic}
 
@@ -260,18 +260,18 @@ Amet.
 \subsection{Oblikovanje besedila v oblike}
 
 Z uporabo ukaza \tbs{}parshape lahko oblikujemo besedilo v poljubne oblike. Kličemo ga v naslednji obliki: \tbs{}parshape=n $i_1 l_1$\ldots pri čemer je n število vrstic, $i_n$ zamik posamezne vrstice, $l_n$ pa njena širina.
-Če torej vnesemo 
-\tbs{}parshape=16 \\ 
-0.25\tbs{}hsize 0.5\tbs{}hsize \\ 
-0.24\tbs{}hsize 0.52\tbs{}hsize \\ 
-0.23\tbs{}hsize 0.54\tbs{}hsize \\ 
-0.22\tbs{}hsize 0.56\tbs{}hsize \\ 
-0.21\tbs{}hsize 0.58\tbs{}hsize \\ 
-0.20\tbs{}hsize 0.6\tbs{}hsize \\ 
-0.19\tbs{}hsize 0.62\tbs{}hsize \\ 
-0.18\tbs{}hsize 0.64\tbs{}hsize \\ 
-0.17\tbs{}hsize 0.66\tbs{}hsize \\ 
-0.16\tbs{}hsize 0.68\tbs{}hsize \\ 
+Če torej vnesemo
+\tbs{}parshape=16 \\
+0.25\tbs{}hsize 0.5\tbs{}hsize \\
+0.24\tbs{}hsize 0.52\tbs{}hsize \\
+0.23\tbs{}hsize 0.54\tbs{}hsize \\
+0.22\tbs{}hsize 0.56\tbs{}hsize \\
+0.21\tbs{}hsize 0.58\tbs{}hsize \\
+0.20\tbs{}hsize 0.6\tbs{}hsize \\
+0.19\tbs{}hsize 0.62\tbs{}hsize \\
+0.18\tbs{}hsize 0.64\tbs{}hsize \\
+0.17\tbs{}hsize 0.66\tbs{}hsize \\
+0.16\tbs{}hsize 0.68\tbs{}hsize \\
 0.15\tbs{}hsize 0.70\tbs{}hsize \\
 0.14\tbs{}hsize 0.72\tbs{}hsize \\
 0.13\tbs{}hsize 0.74\tbs{}hsize \\
@@ -280,16 +280,16 @@ Z uporabo ukaza \tbs{}parshape lahko oblikujemo besedilo v poljubne oblike. Kli�
 0.10\tbs{}hsize 0.80\tbs{}hsize \\
 \tbs{}lipsum[1] (za prvi odstavek besedila Lorem Ipsum), dobimo:\\
 
-\parshape=16 
-0.25\hsize 0.5\hsize 
-0.24\hsize 0.52\hsize 
-0.23\hsize 0.54\hsize 
-0.22\hsize 0.56\hsize 
-0.21\hsize 0.58\hsize 
-0.20\hsize 0.6\hsize 
-0.19\hsize 0.62\hsize 
-0.18\hsize 0.64\hsize 
-0.17\hsize 0.66\hsize 
+\parshape=16
+0.25\hsize 0.5\hsize
+0.24\hsize 0.52\hsize
+0.23\hsize 0.54\hsize
+0.22\hsize 0.56\hsize
+0.21\hsize 0.58\hsize
+0.20\hsize 0.6\hsize
+0.19\hsize 0.62\hsize
+0.18\hsize 0.64\hsize
+0.17\hsize 0.66\hsize
 0.16\hsize 0.68\hsize
 0.15\hsize 0.70\hsize
 0.14\hsize 0.72\hsize
@@ -299,7 +299,7 @@ Z uporabo ukaza \tbs{}parshape lahko oblikujemo besedilo v poljubne oblike. Kli�
 0.10\hsize 0.80\hsize
 \noindent\lipsum[1]
 
-Seveda pa lahko na ta način oblikujemo kakršne koli oblike želimo.
+Seveda pa lahko na ta način oblikujemo odstavke v kakršne koli oblike želimo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -318,7 +318,7 @@ Seveda pa lahko na ta način oblikujemo kakršne koli oblike želimo.
 
 \subsection{Majhne velike črke (small caps)}
 
-Če želimo neko stvar poudariti, ampak ne napisati z velikimi črkami, lahko uporabimo tako imenovane ``majhne velike črke''. Po izgledu so enake velikim, s to razliko, da so pomanjšane. 
+Če želimo neko stvar poudariti, ampak ne napisati z velikimi črkami, lahko uporabimo tako imenovane ``majhne velike črke''. Po izgledu so enake velikim, s to razliko, da so pomanjšane.
 
 Na primer:\\
 \cmsc{A}{a}\\
