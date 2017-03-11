@@ -88,7 +88,7 @@ Ena izmed zelo značilnih stvari pri \TeX{}u je označevanje verzij. Od verzije 
 \TeX{} temelji na podlagi ukazov, ki se začnejo z znakom \tbs{}. Ti ukazi (macri) se razširijo v besedilo ali pa v druge ukaze. Poleg tega pa lahko uporabljamo še zanke ter če-potem-drugače (if-then-else) kontrolne strukture. Ukazi imajo lahko tudi določeno število neobveznih argumentov, ki se jih po klicu ukaza našteje znotraj oglatih oklepajev ([ in ]), obvezne argumente pa se našteje znotraj zavitih oklepajev (\{ in \}).
 S temi ukazi potem spreminjamo velikost besedila, obliko, font\ldots
 
-Ker je \TeX{} napisan tako dobro, teče skoraj na vseh operacijskih sistemih. Poleg tega pa Knuth ponuja denarno nagrado vsakemu, ki bi našel hrošča (bug) v njem. Ta nagrada je na začetku znašale le 2.56 ameriških dolarjev, nato pa se je vsako leto podvojila, dokler se ni ustavila na trenutni vrednosti, ki znaša 372,6 dolarjev. Seveda pa nihče, ki je prejel to nagrado, ni čeka nikoli unovčil, temveč ga je raje uokviril.
+Ker je \TeX{} napisan tako dobro, teče skoraj na vseh operacijskih sistemih. Poleg tega pa Knuth ponuja denarno nagrado vsakemu, ki bi našel hrošča (bug) v njem. Ta nagrada je na začetku znašale le 2,56 ameriških dolarjev, nato pa se je vsako leto podvojila, dokler se ni ustavila na trenutni vrednosti, ki znaša 372,6 dolarjev. Seveda pa nihče, ki je prejel to nagrado, ni čeka nikoli unovčil, temveč ga je raje uokviril.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,7 +97,6 @@ Ker je \TeX{} napisan tako dobro, teče skoraj na vseh operacijskih sistemih. Po
 Na \TeX{}u temelji kar nekaj drugih paketov makrov, med katerimi so najznamenitejši:
 \begin{itemize}
 \item \LaTeX{} (Lamport \TeX{}),
-\item MiK\TeX{},
 \item Con\TeX{}T,
 \item AMS-\TeX{},
 \item Jade\TeX{},
@@ -124,7 +123,7 @@ Tako kot v \TeX{}u je tudi v \LaTeX{}u zelo razvit matematični način vnašanja
 
 \section{Okolja}
 
-Tako \TeX{} kot \LaTeX{} nam ponujata več različnih okolij, ki spremenijo marsikatero pravilo pisanja in s tem tudi končni izgled. Enega izmed njih smo že spoznali, to je matematično okolje, ki pa se mi zdi tako pomembno, da sem ga obravnaval posebej. Vsa okolja se začne z ukazom \tbs{}begin\{{\em ime okolja}\}, konča pa z \tbs{}end\{{\em ime okolja}\}.
+Tako \TeX{} kot \LaTeX{} nam ponujata več različnih okolij, ki spremenijo marsikatero pravilo pisanja in s tem tudi končni izgled. Enega izmed njih smo že spoznali, to je matematično okolje, ki pa se mi zdi tako pomembno, da sem ga obravnaval posebej. Vsa okolja se začne z ukazom \texttt{\tbs{}begin\{{\em ime okolja}\}}, konča pa z \texttt{\tbs{}end\{{\em ime okolja}\}}.
 
 \subsection{Naštevanje}
 Včasih želimo narediti seznam in za to imamo na voljo tri okolja. Vsako se seveda obnaša malce drugače. Prvo je "itemize", pri katerem so stvari naštete z določenim simbolom pred njimi (privzeto je to pika), izgleda pa takole:
@@ -148,6 +147,25 @@ Zadnje okolje pa je "description", pri katerem imamo ime predmeta ter njegov opi
 \item[Est:] Ut Ux
 \end{description}
 
+Naštevanja lahko tudi gnezdimo, kar izgleda takole:
+
+\begin{itemize}
+  \item Lorem
+  \begin{itemize}
+    \item Ipsum
+    \item Dolor
+  \end{itemize}
+  \begin{enumerate}
+    \item Sit
+    \begin{enumerate}
+      \item Amet
+      \item Consectetur
+    \end{enumerate}
+    \item Adipiscing
+  \end{enumerate}
+  \item Elit
+\end{itemize}
+
 \subsection{Razpredelnice}
 
 Zelo pogosto, še posebaj v strokovnih člankih, poročilih itd. moramo dodati kakšno razpredelnico. \LaTeX{} nam to omogoča z uporabo okolja "tabular".
@@ -162,13 +180,13 @@ Pri njegovem začetku moramo navesti koliko stolpcev ter kakšna vrsta bo to. Na
 
 Ko pišemo podatke v razpredelnico, se med polji pomikamo z znakom \&{}, vrstico pa končamo z \tbs\tbs. Če želimo, lahko z uporabo ukaza \tbs{}hline še vodoravno razmejimo celice.
 Primer tabele bi izgledal takole:\\ \\
-\tbs{}begin\{tabular\}\{$|$l c$||$c$|$r$|$\} (Najprej navpična črta, levo poravnano besedilo, dve sredinsko centrirani polji razmejeni z dvojno črto ter desno poravnano polje)\\
-\tbs{}hline (črta na začetku)\\
-Lorem \& Ipsum \& Dolor \& Sit \tbs{}\tbs{} (tukaj ni vodoravne črte)\\
-Amet \& Consectetuer \& Adipiscing \& Elit \tbs{}\tbs{} \tbs{}hline \tbs{}hline (tu imamo dve črti)\\
-Ut \& Purus \& Elit \& Vestibulum \tbs{}\tbs{} \tbs{}hline (tu pa je še zaključna črta)\\\\
-\tbs{}end\{tabular\}\\
-
+\texttt{
+\tbs{}begin\{tabular\}\{$|$l c$||$c$|$r$|$\}} (Najprej navpična črta, levo poravnano besedilo, dve sredinsko centrirani polji razmejeni z dvojno črto ter desno poravnano polje)\\
+\texttt{\tbs{}hline} \hfill (črta na začetku)\\
+\texttt{Lorem \& Ipsum \& Dolor \& Sit \tbs{}\tbs{}} \hfill (tukaj ni vodoravne črte)\\
+\texttt{Amet \& Consectetuer \& Adipiscing \& Elit \tbs{}\tbs{} \tbs{}hline \tbs{}hline} \hfill (tu imamo dve črti)\\
+\texttt{Ut \& Purus \& Elit \& Vestibulum \tbs{}\tbs{} \tbs{}hline} \hfill (tu pa je še zaključna črta)\\\\
+\texttt{\tbs{}end\{tabular\}\\}
 
 Rezultat je takšen:\\
 
@@ -197,8 +215,8 @@ Verjetno vsi poznate besedilo Lorem Ipsum, ki se uporablja za:
 \item kjerkoli drugje, kjer se potrebuje neko besedilo, ki ali ni pomembno kakšno je ali pa se ga pisec ta trenutek ne more spomniti.
 \end{itemize}
 
-Kliče se ga z ukazom \tbs{}lipsum, v oglatih oklepajih pa lahko navedemo število odstavkov.
-Če primer napišemo \tbs{}lipsum[1] dobimo ven nekaj približno takega:\\
+Kliče se ga z ukazom \texttt{\tbs{}lipsum}, v oglatih oklepajih pa lahko navedemo število odstavkov.
+Če primer napišemo \texttt{\tbs{}lipsum[1]} dobimo ven nekaj približno takega:\\
 
 \lipsum[1]
 
@@ -236,15 +254,17 @@ Lahko pa se nam zgodi, da želimo besedilo oblikovati točno na določen način.
 
 \subsection{Upoštevanje prelomov vrstic}
 
-Če želimo, da \LaTeX{} upošteva prelome vrstic, lahko uporabimo ukaz \tbs{}obeylines.
+Če želimo, da \LaTeX{} upošteva prelome vrstic, lahko uporabimo ukaz \texttt{\tbs{}obeylines}.
 Če torej recimo napišemo:
 \\
+\texttt{
 {\obeylines\parindent=0pt
-\{\tbs{}obeylines
-Lorem Ipsum
-Dolor Sit
+\{\tbs{}obeylines \\
+Lorem Ipsum \\
+Dolor Sit \\
 Amet
 \}\\
+}
 }
 \noindent{} Se nam izpiše:
 \\
@@ -259,8 +279,9 @@ Amet.
 
 \subsection{Oblikovanje besedila v oblike}
 
-Z uporabo ukaza \tbs{}parshape lahko oblikujemo besedilo v poljubne oblike. Kličemo ga v naslednji obliki: \tbs{}parshape=n $i_1 l_1$\ldots pri čemer je n število vrstic, $i_n$ zamik posamezne vrstice, $l_n$ pa njena širina.
-Če torej vnesemo
+Z uporabo ukaza \texttt{\tbs{}parshape} lahko oblikujemo besedilo v poljubne oblike. Kličemo ga v naslednji obliki: \texttt{\tbs{}parshape=n $i_1 l_1$\ldots} pri čemer je n število vrstic, $i_n$ zamik posamezne vrstice, $l_n$ pa njena širina.
+Če torej vnesemo\\
+\texttt{
 \tbs{}parshape=16 \\
 0.25\tbs{}hsize 0.5\tbs{}hsize \\
 0.24\tbs{}hsize 0.52\tbs{}hsize \\
@@ -278,7 +299,7 @@ Z uporabo ukaza \tbs{}parshape lahko oblikujemo besedilo v poljubne oblike. Kli�
 0.12\tbs{}hsize 0.76\tbs{}hsize \\
 0.11\tbs{}hsize 0.78\tbs{}hsize \\
 0.10\tbs{}hsize 0.80\tbs{}hsize \\
-\tbs{}lipsum[1] (za prvi odstavek besedila Lorem Ipsum), dobimo:\\
+\tbs{}lipsum[1]} (za prvi odstavek besedila Lorem Ipsum), dobimo:\\
 
 \parshape=16
 0.25\hsize 0.5\hsize
@@ -337,7 +358,7 @@ Vse prikazane črke uporabljajo enako velikost pisave. Pri \LaTeX{}u so te črke
 
 \section{Navajanje virov}
 
-\LaTeX{} nam s pomočjo dodatka Bib\TeX{} omogoča preprosto navajanje virov. Potrebujemo le dodatno \textit{.bib} datoteko, ki jo na želenem mestu kličemo z \tbs{}bibliography\{\textit{ime datoteke}\}. Datoteka mora biti seveda pravilno oblikovana, da jo \LaTeX lahko prebere.
+\LaTeX{} nam s pomočjo dodatka Bib\TeX{} omogoča preprosto navajanje virov. Potrebujemo le dodatno \textit{.bib} datoteko, ki jo na želenem mestu kličemo z \texttt{\tbs{}bibliography\{\textit{ime datoteke}\}}. Datoteka mora biti seveda pravilno oblikovana, da jo \LaTeX lahko prebere.
 Vsako delo mora imeti svoj ``odstavek'', ki pa izgleda takole:
 
 \begin{alltt}
